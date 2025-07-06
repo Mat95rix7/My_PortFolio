@@ -26,9 +26,9 @@ const Projects = () => {
       id: 2,
       title: "Redouanemania",
       des: "Jeux de revision pour enfants.",
-      img: "/RedouaneMania.png",
+      img: "/redouanemania.png",
       iconLists: ["/re.svg","/ts.svg", "/git.svg"],
-      link: "redouane18.vercel.app",
+      link: "https://redouane18.vercel.app",
     },
     {
       id: 3,
