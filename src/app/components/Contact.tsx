@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-import Image from 'next/image';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();

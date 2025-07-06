@@ -1,8 +1,7 @@
 'use client';
 import React, { useState, useEffect, useMemo } from 'react';
-import { Menu, X, Globe, Home, User, Layers, Folder, Mail } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-import Image from 'next/image';
 
 const navItems = [
   { key: 'home'},
@@ -13,7 +12,7 @@ const navItems = [
 ];
 
 function seededRandom(seed: number) {
-  let x = Math.sin(seed) * 10000;
+  const x = Math.sin(seed) * 10000;
   return x - Math.floor(x);
 }
 

@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 import gsap from "gsap";
 
 function seededRandom(seed: number) {
-  let x = Math.sin(seed) * 10000;
+  const x = Math.sin(seed) * 10000;
   return x - Math.floor(x);
 }
 
@@ -135,7 +135,7 @@ const Hero: React.FC = () => {
             </div>
             <div className="text-xs text-gray-300 font-mono">
               <div className="text-blue-400">const</div>
-              <div className="text-purple-400">developer = "passionate"</div>
+              <div className="text-purple-400">developer = &quot;passionate&quot;</div>
             </div>
           </div>
 

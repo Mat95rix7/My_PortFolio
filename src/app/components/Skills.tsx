@@ -1,12 +1,12 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { Code, Server, Settings, Database } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Skills: React.FC = () => {
   const { t } = useLanguage();
 
-  const skillCategories = [
+  const skillCategories = useMemo(() => [
     {
       icon: Code,
       title: t('skills.frontend'),
@@ -51,7 +51,7 @@ const Skills: React.FC = () => {
       ],
       color: 'from-orange-500 to-red-500'
     }
-  ];
+  ], [t]);
 
   // Animation d'apparition en cascade
   const [visibleCards, setVisibleCards] = useState(
@@ -68,7 +68,7 @@ const Skills: React.FC = () => {
         });
       }, 200 + i * 200);
     });
-  }, []);
+  }, [skillCategories]);
 
   return (
     <section id="skills" className="min-h-screen flex items-center py-20 bg-gray-900">

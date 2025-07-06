@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Heart, Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import Image from 'next/image';
 
