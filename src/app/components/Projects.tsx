@@ -35,7 +35,7 @@ const Projects = () => {
       title: "Portfolio",
       des: "Mon portfolio personel.",
       img: "/portfolio.png",
-      iconLists: ["/re.svg","/three.svg", "/gsap.svg"],
+      iconLists: ["/re.svg","/next.svg", "/gsap.svg"],
       link: "https://mat95rix7.vercel.app/",
     }
   ];
