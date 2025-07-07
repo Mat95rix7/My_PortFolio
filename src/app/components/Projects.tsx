@@ -101,9 +101,11 @@ const Projects = () => {
               alt={title}
               width={800}
               height={400}
-              className="rounded-xl w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700"
+              className="rounded-xl w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700 rotate-6 scale-85"
             />
-            <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1 text-center mt-2 text-foreground">{title}</h1>
+            <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1 text-center mt-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              {title}
+            </h1>
             <p className="text-foreground text-center mt-1 mb-2 px-4">{des}</p>
             <div className="flex flex-row gap-3 mb-2">
               {iconLists.map((icon, idx) => (

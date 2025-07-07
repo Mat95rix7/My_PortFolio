@@ -11,9 +11,9 @@ const Footer: React.FC = () => {
     <footer className="bg-gray-900 border-t border-gray-800 text-white py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Brand */}
-            <div>
+            <div className="md:col-span-2 flex flex-col items-center text-center">
               <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
                 Djamel NAADJI
               </div>
@@ -39,29 +39,8 @@ const Footer: React.FC = () => {
               </div>
             </div>
 
-            {/* Quick Links */}
-            <div>
-              <h3 className="text-xl font-bold mb-4">Quick Links</h3>
-              <div className="space-y-2">
-                {['home', 'about', 'skills', 'projects', 'contact'].map((item) => (
-                  <button
-                    key={item}
-                    onClick={() => {
-                      const element = document.getElementById(item);
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
-                    className="block text-gray-400 hover:text-white transition-colors duration-200 capitalize"
-                  >
-                    {t(`nav.${item}`)}
-                  </button>
-                ))}
-              </div>
-            </div>
-
             {/* Contact Info */}
-            <div>
+            <div className="flex flex-col items-center text-center">
               <h3 className="text-xl font-bold mb-4">Contact Info</h3>
               <div className="space-y-2 text-gray-400">
                 <div>Jouy Le Moutier, France</div>
@@ -74,7 +53,7 @@ const Footer: React.FC = () => {
           {/* Bottom Bar */}
           <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-2 text-gray-400">
-              <span>© 2024 Djamel NAADJI. {t('footer.rights')}</span>
+              <span>© 2025 Mat95rix7. {t('footer.rights')}</span>
             </div>
             <div className="flex items-center space-x-2 text-gray-400 mt-4 md:mt-0">
               <span>{t('footer.made')}</span>
