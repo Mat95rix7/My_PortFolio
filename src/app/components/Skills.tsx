@@ -59,6 +59,7 @@ const Skills: React.FC = () => {
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
+    const isMobile = window.innerWidth < 768;
     const observer = new window.IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -67,7 +68,7 @@ const Skills: React.FC = () => {
           setFillBars(false);
         }
       },
-      { threshold: 0.6 }
+      { threshold: isMobile ? 0.1 : 0.6 }
     );
     observer.observe(section);
     return () => observer.disconnect();
