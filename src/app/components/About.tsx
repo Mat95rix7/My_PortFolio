@@ -3,6 +3,7 @@ import React from 'react';
 import { Code, Users, Award } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import Image from 'next/image';
+import { preventOrphans } from '../utils/preventOrphans';
 
 const About: React.FC = () => {
   const { t } = useLanguage();
@@ -43,8 +44,8 @@ const About: React.FC = () => {
             {/* Left Column - Content */}
             <div className="space-y-8">
               <div className="prose prose-lg">
-                <p className="text-gray-300 leading-relaxed text-justify">
-                  {t('about.description')}
+                <p className="text-gray-300 leading-relaxed text-justify text-lg md:text-xl lg:text-2xl">
+                  {preventOrphans(t('about.description'))}
                 </p>
               </div>
 

@@ -96,8 +96,8 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-gray-900 py-10 sm:py-14">
-      {/* Background spectaculaire (particules, cartes, formes, blobs, etc.) - FIXES UNIQUEMENT */}
-      <div className="absolute inset-0 pointer-events-none select-none">
+      {/* Background spectaculaire (particules, cartes, formes, blobs, etc.) - UNIQUEMENT SUR DESKTOP */}
+      <div className="hidden sm:block absolute inset-0 pointer-events-none select-none">
         {/* Particules magiques avec différentes tailles - FIXES */}
         <div className="absolute inset-0">
           {particles.map((p, i) => {
@@ -243,7 +243,7 @@ const Hero: React.FC = () => {
         <FlyingName first={firstName} last={lastName} />
 
         {/* Titre avec animation spectaculaire */}
-        <h2 className="text-2xl md:text-3xl mb-4 opacity-100 animation-delay-400">
+        <h2 className="text-lg md:text-2xl mb-4 opacity-100 animation-delay-400 text-center">
           <span className="relative inline-block">
             <span className="relative text-gary-200 font-bold">
               {t('hero.title')}
@@ -252,7 +252,7 @@ const Hero: React.FC = () => {
         </h2>
 
         {/* Sous-titre aéré */}
-        <p className="text-lg text-gray-400 mb-6 max-w-2xl mx-auto opacity-0 animate-fade-in-up animation-delay-600 leading-relaxed">
+        <p className="text-lg text-center text-gray-400 mb-6 max-w-2xl mx-auto opacity-0 animate-fade-in-up animation-delay-600 leading-relaxed">
           {t('hero.subtitle')}
         </p>
 

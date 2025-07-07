@@ -1,6 +1,3 @@
-// Copié depuis Portfolio_Bolt/src/data/translations.ts
-// ... contenu complet du translations original ... 
-
 export const translations = {
   fr: {
     nav: {
@@ -22,7 +19,7 @@ export const translations = {
     about: {
       title: 'À propos de moi',
       subtitle: 'Développeur motivé et passionné',
-      description: 'Développeur passionné par les technologies web modernes. Bien que je débute ma carrière, je compense mon manque d\'expérience par une motivation sans faille, une curiosité insatiable et une volonté d\'apprendre constamment. Je suis prêt à m\'investir pleinement dans vos projets !',
+      description: 'Développeur passionné par les technologies web modernes, je me distingue par ma motivation, ma curiosité et ma volonté constante d’apprendre. Prêt à m’investir pleinement dans des projets ambitieux et à apporter une réelle valeur ajoutée à votre équipe.',
       experience: 'Ans d\'apprentissage',
       projects: 'Projets réalisés',
       motivation: 'Motivé'
@@ -84,17 +81,18 @@ export const translations = {
     },
     hero: {
       greeting: 'Hello, I am',
-      name: 'Djamel NAADJI',
-      title: ' Application Designer and Developer',
+      firstname: 'Djamel',
+      lastname: 'NAADJI',
+      title: 'Application Developer Designer',
       subtitle: 'Passionate about code and ready to create exceptional web experiences',
       cta: 'View my projects',
       contact: 'Contact me'
     },
     about: {
       title: 'About me',
-      subtitle: 'Young motivated and passionate developer',
-      description: 'Junior developer passionate about modern web technologies. Although I\'m starting my career, I compensate for my lack of experience with unwavering motivation, insatiable curiosity, and a constant willingness to learn. I\'m ready to fully invest myself in your projects!',
-      experience: 'Year of learning',
+      subtitle: 'motivated and passionate developer',
+      description: 'Passionate web developer with a strong interest in modern technologies. I stand out for my motivation, curiosity, and continuous desire to learn. Ready to fully invest in ambitious projects and bring real value to your team.',
+      experience: 'Years of learning',
       projects: 'Projects completed',
       motivation: 'Motivated'
     },

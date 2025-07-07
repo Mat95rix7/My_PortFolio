@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
 import { Code, Server, Settings, Database } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -53,25 +53,28 @@ const Skills: React.FC = () => {
     }
   ], [t]);
 
-  // Animation d'apparition en cascade
-  const [visibleCards, setVisibleCards] = useState(
-    Array(skillCategories.length).fill(false)
-  );
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [fillBars, setFillBars] = useState(false);
 
   useEffect(() => {
-    skillCategories.forEach((_, i) => {
-      setTimeout(() => {
-        setVisibleCards(prev => {
-          const copy = [...prev];
-          copy[i] = true;
-          return copy;
-        });
-      }, 200 + i * 200);
-    });
-  }, [skillCategories]);
+    const section = sectionRef.current;
+    if (!section) return;
+    const observer = new window.IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setFillBars(true);
+        } else {
+          setFillBars(false);
+        }
+      },
+      { threshold: 0.6 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id="skills" className="min-h-screen flex items-center py-20 bg-gray-900">
+    <section id="skills" ref={sectionRef} className="min-h-screen flex items-center py-20 bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -89,10 +92,7 @@ const Skills: React.FC = () => {
             {skillCategories.map((category, index) => (
               <div
                 key={index}
-                className={`bg-gray-900 border border-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300
-                  ${visibleCards[index] ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}
-                `}
-                style={{ transition: 'opacity 1.2s cubic-bezier(.68,-0.55,.27,1.55), transform 1.2s cubic-bezier(.68,-0.55,.27,1.55)' }}
+                className="bg-gray-900 border border-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
               >
                 <div className="flex items-center mb-6">
                   <div className={`p-3 rounded-full bg-gradient-to-r ${category.color} mr-4`}>
@@ -110,8 +110,8 @@ const Skills: React.FC = () => {
                       </div>
                       <div className="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
                         <div 
-                          className={`h-full bg-gradient-to-r ${category.color} rounded-full transition-all duration-1000 ease-out group-hover:animate-pulse`}
-                          style={{ width: visibleCards[index] ? `${skill.level}%` : '0%' }}
+                          className={`h-full bg-gradient-to-r ${category.color} rounded-full transition-all duration-3000 ease-out group-hover:animate-pulse`}
+                          style={{ width: fillBars ? `${skill.level}%` : '0%' }}
                         ></div>
                       </div>
                     </div>

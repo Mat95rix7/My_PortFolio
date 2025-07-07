@@ -79,11 +79,18 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="py-20" id="projects">
-      <h1 className="heading projects-title-animation">
-      {t('projects.title')}  
-      </h1>
-      <p className="text-2xl md:text-3xl text-center projects-title-animation">{t('projects.subtitle')}</p>
+<section id="project" className="min-h-screen flex items-center py-20 bg-gray-900">
+  <div className="container mx-auto px-4">
+    <div className="max-w-6xl mx-auto">
+      {/* Section Header */}
+        <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              {t('projects.title')}
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              {t('projects.subtitle')}
+            </p>
+        </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 max-w-7xl mx-auto px-4 mt-10 place-items-center">
         {projects.map(({ id, title, des, img, iconLists, link }) => (
           <Tilt
@@ -103,17 +110,17 @@ const Projects = () => {
               height={400}
               className="rounded-xl w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700 rotate-6 scale-85"
             />
-            <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1 text-center mt-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h1 className="font-bold mb-1 text-2xl md:text-3xl line-clamp-1 text-center mt-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               {title}
             </h1>
-            <p className="text-foreground text-center mt-1 mb-2 px-4">{des}</p>
-            <div className="flex flex-row gap-3 mb-2">
+            <p className="text-foreground text-center mt-1 mb-3 px-4">{des}</p>
+            <div className="flex flex-row gap-3 mb-4">
               {iconLists.map((icon, idx) => (
                 <span
                   key={idx}
                   className="inline-flex items-center justify-center bg-secondary/80 border border-border rounded-full p-1.5 shadow-sm"
                 >
-                  <Image src={icon} alt="icon" width={24} height={24} className="object-contain" />
+                  <Image src={icon} alt="icon" width={20} height={20} className="object-contain" />
                 </span>
               ))}
             </div>
@@ -121,7 +128,7 @@ const Projects = () => {
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-auto mb-2 flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold uppercase tracking-wide shadow-xl hover:scale-110 hover:shadow-blue-500/40 hover:shadow-2xl transition-all duration-300 animate-cta-glow relative overflow-hidden group focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="mt-auto mb-4 flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold uppercase tracking-wide shadow-xl hover:scale-110 hover:shadow-blue-500/40 hover:shadow-2xl transition-all duration-300 animate-cta-glow relative overflow-hidden group focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
               <span className="relative z-10 flex items-center gap-2">
                 Voir le projet
@@ -135,7 +142,10 @@ const Projects = () => {
         ))}
       </div>
     </div>
+    </div>
+</section>
   );
 };
 
 export default Projects;
+

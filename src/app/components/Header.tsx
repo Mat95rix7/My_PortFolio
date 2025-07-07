@@ -95,25 +95,27 @@ const Header: React.FC = () => {
           </div>
 
           {/* Navigation Desktop */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-              <button
-                key={item.key}
-                onClick={() => scrollToSection(item.key)}
-                className="relative flex items-center px-3 py-1 text-gray-200 hover:text-white font-semibold text-lg transition-all duration-300 group focus:outline-none animate-menu-explosion"
-                style={{ animationDelay: `${index * 0.13}s`, animationName: 'menuExplosion' }}
-              >
-                <span className="relative z-10 flex items-center gap-1 animate-text-glow-subtle">
-                  {t(`nav.${item.key}`)}
-                </span>
-                {/* Underline animé */}
-                <span className="absolute left-0 bottom-0 w-full h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-full shadow-lg shadow-blue-400/30 animate-underline-pop" />
-                {/* Halo lumineux dynamique */}
-                <span className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-80 transition-opacity duration-700 bg-gradient-to-r from-blue-400/60 via-purple-400/60 to-pink-400/60 blur-2xl -z-10 animate-halo-fade" />
-                {/* Effet de lumière sur hover */}
-                <span className="absolute left-1/2 top-0 w-24 h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-90 blur-lg transition-all duration-700 -translate-x-1/2 animate-light-sweep" />
-              </button>
-            ))}
+          <nav className="hidden md:flex items-center">
+            <div className="flex items-center gap-x-2 rounded-full bg-black/50 p-2 shadow-lg">
+              {navItems.map((item, index) => (
+                <button
+                  key={item.key}
+                  onClick={() => scrollToSection(item.key)}
+                  className="relative flex items-center px-4 py-2 text-gray-200 hover:text-white font-semibold text-lg transition-all duration-300 group focus:outline-none animate-menu-explosion"
+                  style={{ animationDelay: `${index * 0.13}s`, animationName: 'menuExplosion' }}
+                >
+                  <span className="relative z-10 flex items-center gap-1 animate-text-glow-subtle">
+                    {t(`nav.${item.key}`)}
+                  </span>
+                  {/* Underline animé */}
+                  <span className="absolute left-0 bottom-0 w-full h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-full shadow-lg shadow-blue-400/30 animate-underline-pop" />
+                  {/* Halo lumineux dynamique */}
+                  <span className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-80 transition-opacity duration-700 bg-gradient-to-r from-blue-400/60 via-purple-400/60 to-pink-400/60 blur-2xl -z-10 animate-halo-fade" />
+                  {/* Effet de lumière sur hover */}
+                  <span className="absolute left-1/2 top-0 w-24 h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-90 blur-lg transition-all duration-700 -translate-x-1/2 animate-light-sweep" />
+                </button>
+              ))}
+            </div>
           </nav>
 
           {/* Language Toggle & Mobile Menu */}
@@ -149,7 +151,7 @@ const Header: React.FC = () => {
                 <button
                   key={item.key}
                   onClick={() => scrollToSection(item.key)}
-                  className="relative flex items-center px-6 py-4 text-gray-200 hover:text-white hover:bg-gradient-to-r hover:from-blue-700 hover:to-purple-700 rounded-xl transition-all duration-300 group font-semibold animate-menu-explosion"
+                  className="relative flex items-center justify-center rounded-full bg-gray-800/80 p-4 text-gray-200 hover:text-white font-semibold text-lg transition-all duration-300 group animate-menu-explosion hover:bg-gray-700/80 shadow-md"
                   style={{ animationDelay: `${index * 0.13}s`, animationName: 'menuExplosion' }}
                 >
                   <span className="relative z-10 flex items-center gap-1 animate-text-glow-subtle">
