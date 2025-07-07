@@ -18,7 +18,7 @@ const Projects = () => {
       id: 1,
       title: "NextMovie",
       des: "Application pour suivre l\'actualité cinema.",
-      img: "/nextmovie.png",
+      img: "/NextMovie.png",
       iconLists: ["/re.svg","/tail.svg", "/vercel.svg"],
       link: "https://my-cineapp.vercel.app/",
     },
@@ -26,7 +26,7 @@ const Projects = () => {
       id: 2,
       title: "Redouanemania",
       des: "Jeux de revision pour enfants.",
-      img: "/redouanemania.png",
+      img: "/RedouaneMania.png",
       iconLists: ["/re.svg","/ts.svg", "/git.svg"],
       link: "https://redouane18.vercel.app",
     },
@@ -34,8 +34,8 @@ const Projects = () => {
       id: 3,
       title: "Portfolio",
       des: "Mon portfolio personel.",
-      img: "/portfolio.png",
-      iconLists: ["/re.svg","/next.svg", "/gsap.svg"],
+      img: "/Portfolio.png",
+      iconLists: ["/re.svg","/next.js.svg", "/gsap.svg"],
       link: "https://mat95rix7.vercel.app/",
     }
   ];
