@@ -1,6 +1,6 @@
 'use client';
 import React, { useMemo, useRef, useEffect } from 'react';
-import { Github, Linkedin, Mail, Code, Zap, Star, Sparkles, Rocket, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, Code, Zap, Star, Sparkles, Rocket, Heart, Download } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import gsap from "gsap";
 
@@ -92,6 +92,15 @@ const Hero: React.FC = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/MyCV_Naadji_Djamel.pdf';
+    link.download = 'MyCV_Naadji_Djamel.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -258,6 +267,15 @@ const Hero: React.FC = () => {
 
         {/* Boutons d'action (plus grands et plus animés) */}
         <div className="flex flex-wrap gap-4 justify-center mb-6 animate-fade-in-up animation-delay-800">
+          {/* Bouton de téléchargement de CV */}
+            <button
+              onClick={handleDownloadCV}
+              className="px-10 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg shadow-xl hover:scale-110 hover:shadow-blue-500/40 hover:shadow-2xl transition-all duration-300 animate-cta-glow relative overflow-hidden group"
+            >
+              {/* <Download size={20} /> */}
+              <span className="relative z-10">{t('hero.cv')}</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-blue-400/30 via-purple-400/30 to-pink-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full blur-sm animate-cta-glow-bg" />
+            </button>
           <button
             onClick={() => scrollToSection('projects')}
             className="px-10 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg shadow-xl hover:scale-110 hover:shadow-blue-500/40 hover:shadow-2xl transition-all duration-300 animate-cta-glow relative overflow-hidden group"
@@ -267,7 +285,7 @@ const Hero: React.FC = () => {
           </button>
           <button
             onClick={() => scrollToSection('contact')}
-            className="px-10 py-4 rounded-full bg-gray-800 text-gray-100 font-bold text-lg border-2 border-gray-700 hover:bg-gradient-to-r hover:from-blue-700 hover:to-purple-700 hover:text-white hover:border-blue-500 transition-all duration-300 shadow-xl hover:scale-110 hover:shadow-purple-500/40 hover:shadow-2xl animate-cta-glow relative overflow-hidden group"
+            className="px-10 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg shadow-xl hover:scale-110 hover:shadow-blue-500/40 hover:shadow-2xl transition-all duration-300 animate-cta-glow relative overflow-hidden group"
           >
             <span className="relative z-10">{t('hero.contact')}</span>
             <span className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-purple-400/20 to-pink-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full blur-sm animate-cta-glow-bg" />

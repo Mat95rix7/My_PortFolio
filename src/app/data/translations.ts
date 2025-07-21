@@ -13,6 +13,7 @@ export const translations = {
       lastname: 'NAADJI',
       title: 'Concepteur Développeur d\'Applications',
       subtitle: 'Passionné par le code et prêt à créer des expériences web exceptionnelles',
+      cv: 'Télécharger mon CV',
       cta: 'Voir mes projets',
       contact: 'Me contacter'
     },
@@ -85,6 +86,7 @@ export const translations = {
       lastname: 'NAADJI',
       title: 'Application Developer Designer',
       subtitle: 'Passionate about code and ready to create exceptional web experiences',
+      cv: 'Download my CV',
       cta: 'View my projects',
       contact: 'Contact me'
     },
