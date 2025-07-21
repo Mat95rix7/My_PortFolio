@@ -1,6 +1,6 @@
 'use client';
 import React, { useMemo, useRef, useEffect } from 'react';
-import { Github, Linkedin, Mail, Code, Zap, Star, Sparkles, Rocket, Heart, Download } from 'lucide-react';
+import { Github, Linkedin, Mail, Code, Zap, Star, Sparkles, Rocket, Heart } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import gsap from "gsap";
 
