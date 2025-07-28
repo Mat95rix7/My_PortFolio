@@ -32,10 +32,18 @@ const Projects = () => {
     },
     {
       id: 3,
+      title: "Arbre Généalogique",
+      des: "construit votre arbre généalogique.",
+      img: "/arbre.png",
+      iconLists: ["/re.svg","/next.js.svg", "/gsap.svg"],
+      link: "https://famillytree.vercel.app/",
+    },
+    {
+      id: 4,
       title: "Portfolio",
       des: "Mon portfolio personel.",
       img: "/Portfolio.png",
-      iconLists: ["/re.svg","/next.js.svg", "/gsap.svg"],
+      iconLists: ["/re.svg","/next.js.svg", "/tail.svg"],
       link: "https://mat95rix7.vercel.app/",
     }
   ];
@@ -91,7 +99,7 @@ const Projects = () => {
               {t('projects.subtitle')}
             </p>
         </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 max-w-7xl mx-auto px-4 mt-10 place-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 max-w-7xl mx-auto px-4 mt-14 place-items-center">
         {projects.map(({ id, title, des, img, iconLists, link }) => (
           <Tilt
             key={id}
