@@ -11,10 +11,11 @@ const Skills: React.FC = () => {
       icon: Code,
       title: t('skills.frontend'),
       skills: [
-        { name: 'JavaScript', level: 90 },
+        { name: 'JavaScript / TypeScript', level: 90 },
         { name: 'React / Vue', level: 90 },
-        { name: 'Tailwind CSS', level: 85 },
-        { name: 'Next.js', level: 60 }
+        { name: 'Next.js', level: 60 },
+        { name: 'Tailwind / Bootstrap', level: 85 },
+        
       ],
       color: 'from-blue-500 to-cyan-500'
     },
@@ -22,10 +23,10 @@ const Skills: React.FC = () => {
       icon: Server,
       title: t('skills.backend'),
       skills: [
-        { name: 'Node.js', level: 90 },
-        { name: 'Express.js', level: 85 },
-        { name: 'Python', level: 50 },
-        { name: 'Php', level: 70 }
+        { name: 'Node / Express', level: 90 },
+        { name: 'Python / Django', level: 60 },
+        { name: 'Php / symfony', level: 70 },
+        { name: 'REST API', level: 70 }
       ],
       color: 'from-green-500 to-emerald-500'
     },
@@ -34,9 +35,9 @@ const Skills: React.FC = () => {
       title: t('skills.databases'),
       skills: [
         { name: 'MongoDB', level: 85 },
-        { name: 'MySQL', level: 80 },
         { name: 'Firebase', level: 75 },
-        { name: 'PostgreSQL', level: 70 }
+        { name: 'MySQL', level: 80 },
+        { name: 'PostgreSQL', level: 70 },
       ],
       color: 'from-purple-500 to-pink-500'
     },
@@ -44,10 +45,10 @@ const Skills: React.FC = () => {
       icon: Settings,
       title: t('skills.tools'),
       skills: [
-        { name: 'Docker', level: 70 },
-        { name: 'Git', level: 80 },
-        { name: 'Github', level: 90 },
-        { name: 'Linux', level: 85 }
+        { name: 'Docker / DockerHub', level: 70 },
+        { name: 'Git / GitHub', level: 80 },
+        { name: 'Vercel', level: 90 },
+        { name: 'Windows / macOS / Linux', level: 85 }
       ],
       color: 'from-orange-500 to-red-500'
     }
