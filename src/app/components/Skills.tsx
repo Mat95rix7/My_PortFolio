@@ -14,7 +14,7 @@ const Skills: React.FC = () => {
         { name: 'JavaScript / TypeScript', level: 90 },
         { name: 'React / Vue', level: 90 },
         { name: 'Next.js', level: 60 },
-        { name: 'Tailwind / Bootstrap', level: 85 },
+        { name: 'React Native', level: 60 },
         
       ],
       color: 'from-blue-500 to-cyan-500'
@@ -35,9 +35,9 @@ const Skills: React.FC = () => {
       title: t('skills.databases'),
       skills: [
         { name: 'MongoDB', level: 85 },
-        { name: 'Firebase', level: 75 },
         { name: 'MySQL', level: 80 },
-        { name: 'PostgreSQL', level: 70 },
+        { name: 'Firebase', level: 75 },
+        { name: 'Supabase', level: 70 },
       ],
       color: 'from-purple-500 to-pink-500'
     },
@@ -47,7 +47,7 @@ const Skills: React.FC = () => {
       skills: [
         { name: 'Docker / DockerHub', level: 70 },
         { name: 'Git / GitHub', level: 80 },
-        { name: 'Vercel', level: 90 },
+        { name: 'Vercel Functions / API Routes', level: 80 },
         { name: 'Windows / macOS / Linux', level: 85 }
       ],
       color: 'from-orange-500 to-red-500'

@@ -11,7 +11,7 @@ export const translations = {
       greeting: 'Bonjour, je suis',
       firstname: 'Djamel',
       lastname: 'NAADJI',
-      title: 'Concepteur Développeur d\'Applications',
+      title: 'Concepteur Développeur d\'Applications - Full Stack',
       subtitle: 'Passionné par le code et prêt à créer des expériences web exceptionnelles',
       cv: 'Télécharger mon CV',
       cta: 'Voir mes projets',
