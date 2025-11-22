@@ -37,7 +37,7 @@ export default function Contact() {
     return true;
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     if (!validateForm()) return;
 
