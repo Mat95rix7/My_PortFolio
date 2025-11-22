@@ -20,7 +20,7 @@ export const translations = {
     about: {
       title: 'À propos de moi',
       subtitle: 'Développeur motivé et passionné',
-      description: 'Développeur passionné par les technologies web modernes, je me distingue par ma motivation, ma curiosité et ma volonté constante d’apprendre. Prêt à m’investir pleinement dans des projets ambitieux et à apporter une réelle valeur ajoutée à votre équipe.',
+      description: 'Développeur passionné par les technologies web modernes, je me distingue par ma motivation, ma curiosité et ma volonté constante d\'apprendre. Prêt à m\'investir pleinement dans des projets ambitieux et à apporter une réelle valeur ajoutée à votre équipe.',
       experience: 'Ans d\'apprentissage',
       projects: 'Projets réalisés',
       motivation: 'Motivé'
@@ -56,15 +56,26 @@ export const translations = {
       subtitle: 'Discutons de votre prochain projet',
       name: 'Nom',
       email: 'Email',
+      subject: 'Sujet',
       message: 'Message',
       send: 'Envoyer',
+      sending: 'Envoi en cours...',
       info: {
         title: 'Informations de contact',
         description: 'N\'hésitez pas à me contacter pour discuter de vos projets ou pour toute collaboration.',
         location: 'Jouy Le Moutier, France',
         phone: '+33 6 14 51 56 85',
         email: 'n.djamel95@gmail.com'
-      }
+      },
+      validation: {
+        nameMin: 'Le nom doit contenir au moins 2 caractères',
+        emailInvalid: 'L\'email est invalide',
+        subjectMin: 'Le sujet doit contenir au moins 3 caractères',
+        messageMin: 'Le message doit contenir au moins 10 caractères'
+      },
+      success: 'Message envoyé avec succès !',
+      error: 'Erreur lors de l\'envoi du message.',
+      errorTry: 'Une erreur est survenue. Veuillez réessayer.'
     },
     footer: {
       rights: 'Tous droits réservés.',
@@ -129,15 +140,26 @@ export const translations = {
       subtitle: 'Let\'s discuss your next project',
       name: 'Name',
       email: 'Email',
+      subject: 'Subject',
       message: 'Message',
       send: 'Send',
+      sending: 'Sending...',
       info: {
         title: 'Contact information',
         description: 'Feel free to contact me to discuss your projects or for any collaboration.',
         location: 'Jouy Le Moutier, France',
         phone: '+33 6 14 51 56 85',
         email: 'n.djamel95@gmail.com'
-      }
+      },
+      validation: {
+        nameMin: 'Name must contain at least 2 characters',
+        emailInvalid: 'Email is invalid',
+        subjectMin: 'Subject must contain at least 3 characters',
+        messageMin: 'Message must contain at least 10 characters'
+      },
+      success: 'Message sent successfully!',
+      error: 'Error sending message.',
+      errorTry: 'An error occurred. Please try again.'
     },
     footer: {
       rights: 'All rights reserved.',
@@ -145,4 +167,4 @@ export const translations = {
       by: 'by'
     }
   }
-}; 
+};
