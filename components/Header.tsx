@@ -151,7 +151,7 @@ const Header: React.FC = () => {
                 <button
                   key={item.key}
                   onClick={() => scrollToSection(item.key)}
-                  className="relative flex items-center justify-center rounded-full bg-gray-800/80 p-4 text-gray-200 hover:text-white font-semibold text-lg transition-all duration-300 group animate-menu-explosion hover:bg-gray-700/80 shadow-md"
+                  className="relative flex items-center justify-center rounded-full bg-gray-800/80 p-4 mx-4 text-gray-200 hover:text-white font-semibold text-lg transition-all duration-300 group animate-menu-explosion hover:bg-gray-700/80 shadow-md"
                   style={{ animationDelay: `${index * 0.13}s`, animationName: 'menuExplosion' }}
                 >
                   <span className="relative z-10 flex items-center gap-1 animate-text-glow-subtle">

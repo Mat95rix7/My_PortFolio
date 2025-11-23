@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "./styles/animations.css";
-import { LanguageProvider } from './context/LanguageContext';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import "@/styles/animations.css";
+import { LanguageProvider } from '@/context/LanguageContext';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { Toaster } from "sonner";
 
 const inter = Inter({

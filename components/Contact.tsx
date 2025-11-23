@@ -88,7 +88,7 @@ export default function Contact() {
 
           {/* Header */}
           <div className="text-center mb-16 animate-fade-down">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               {t('contact.title')}
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -108,7 +108,7 @@ export default function Contact() {
                 { icon: Mail, title: t('contact.info.email'), color: 'from-purple-500 to-pink-500' }]
               .map(({ icon: Icon, title, color }, i) => (
                 <div key={i} className="flex items-center space-x-4 group animate-fade-right">
-                  <div className={`p-3 rounded-full bg-gradient-to-r ${color} group-hover:scale-110 transition`}> <Icon className="w-6 h-6 text-white" /> </div>
+                  <div className={`p-3 rounded-full bg-linear-to-r ${color} group-hover:scale-110 transition`}> <Icon className="w-6 h-6 text-white" /> </div>
                   <span className="text-gray-300 font-medium">{title}</span>
                 </div>
               ))}

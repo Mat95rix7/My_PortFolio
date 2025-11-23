@@ -3,6 +3,7 @@ import React from 'react';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import Image from 'next/image';
+import { label } from 'framer-motion/m';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -22,19 +23,17 @@ const Footer: React.FC = () => {
               </p>
               <div className="flex space-x-4">
                 {[
-                  { icon: Github, href: 'https://github.com', color: 'hover:text-gray-300' },
-                  { icon: Linkedin, href: 'https://linkedin.com', color: 'hover:text-blue-400' },
+                  { icon: Github, href: 'https://github.com/Mat95rix7', color: 'hover:text-gray-300' },
+                  { icon: Linkedin, href: 'https://www.linkedin.com/in/naadji-djamel/', color: 'hover:text-blue-400' },
                   { icon: Mail, href: 'mailto:n.djamel95@gmail.com', color: 'hover:text-red-400' }
                 ].map(({ icon: Icon, href, color }, index) => (
-                  <a
+                  <button
                     key={index}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-2 rounded-lg bg-gray-800 border border-gray-700 text-gray-400 ${color} transition-all duration-300 hover:scale-110`}
+                    onClick={() => window.open(href, "_blank", "noopener,noreferrer")}
+                    className={`p-2 rounded-lg bg-gray-800 border border-gray-700 text-gray-400 ${color} transition-all duration-300 hover:scale-110 cursor-pointer`}
                   >
-                    <Icon className="w-5 h-5" />
-                  </a>
+                    <Icon className="w-5 h-5 pointer-events-none" />
+                  </button>
                 ))}
               </div>
             </div>
