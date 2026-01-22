@@ -44,22 +44,22 @@ const FlyingName = ({ first, last }: { first: string; last: string }) => {
   }, [first, last]);
   return (
     <h1 className="text-5xl md:text-7xl font-black mb-4 flex justify-center">
-      {first.split("").map((char, i) => (
-        <span
-          key={i}
-          ref={el => { lettersRef.current[i] = el; }}
-          style={{ color: colors[i % colors.length] }}
-          className="inline-block font-black"
-        >
-          {char}
-        </span>
-      ))}
-      <span className="mx-2" />
       {last.split("").map((char, i) => (
         <span
           key={first.length + i}
           ref={el => { lettersRef.current[first.length + i] = el; }}
           style={{ color: colors[(first.length + i) % colors.length] }}
+          className="inline-block font-black"
+        >
+          {char}
+        </span>
+      ))}
+      <span className="mx-8" />
+      {first.split("").map((char, i) => (
+        <span
+          key={i}
+          ref={el => { lettersRef.current[i] = el; }}
+          style={{ color: colors[i % colors.length] }}
           className="inline-block font-black"
         >
           {char}
