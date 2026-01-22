@@ -111,11 +111,11 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0">
           {particles.map((p, i) => {
             let className = '';
-            if (p.type === 0) className = 'w-4 h-4 bg-gradient-to-r from-blue-400 to-cyan-400 animate-float-magical';
-            else if (p.type === 1) className = 'w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 animate-float-sparkle';
-            else if (p.type === 2) className = 'w-3 h-3 bg-gradient-to-r from-pink-400 to-red-400 animate-float-bounce';
+            if (p.type === 0) className = 'w-4 h-4 bg-linear-to-r from-blue-400 to-cyan-400 animate-float-magical';
+            else if (p.type === 1) className = 'w-2 h-2 bg-linear-to-r from-purple-400 to-pink-400 animate-float-sparkle';
+            else if (p.type === 2) className = 'w-3 h-3 bg-linear-to-r from-pink-400 to-red-400 animate-float-bounce';
             else if (p.type === 3) className = 'w-1 h-1 bg-yellow-400 animate-twinkle';
-            else className = 'w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-400 animate-float-wave';
+            else className = 'w-2 h-2 bg-linear-to-r from-cyan-400 to-blue-400 animate-float-wave';
             return (
               <div
                 key={i}
@@ -149,7 +149,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Carte de stats */}
-          <div className="absolute top-32 right-16 bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-blue-400/30 p-4 rounded-xl shadow-2xl animate-float-card-reverse">
+          <div className="absolute top-32 right-16 bg-linear-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-blue-400/30 p-4 rounded-xl shadow-2xl animate-float-card-reverse">
             <div className="text-center">
               <div className="text-2xl font-bold text-blue-400 animate-count-up">100%</div>
               <div className="text-xs text-gray-300">Motivation</div>
@@ -165,7 +165,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Carte de créativité */}
-          <div className="absolute bottom-20 right-32 bg-gradient-to-br from-pink-600/20 to-purple-600/20 backdrop-blur-sm border border-pink-400/30 p-3 rounded-xl shadow-2xl animate-float-card-bounce">
+          <div className="absolute bottom-20 right-32 bg-linear-to-br from-pink-600/20 to-purple-600/20 backdrop-blur-sm border border-pink-400/30 p-3 rounded-xl shadow-2xl animate-float-card-bounce">
             <div className="flex items-center space-x-2">
               <Sparkles className="w-5 h-5 text-pink-400" />
               <span className="text-sm text-gray-300">Créatif</span>
@@ -196,22 +196,22 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Blobs animés spectaculaires - FIXES */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full mix-blend-multiply filter blur-xl animate-blob-spectacular"></div>
-        <div className="absolute top-20 right-0 w-80 h-80 bg-gradient-to-r from-purple-500/25 to-pink-500/25 rounded-full mix-blend-multiply filter blur-xl animate-blob-spectacular animation-delay-2000"></div>
-        <div className="absolute bottom-0 left-20 w-72 h-72 bg-gradient-to-r from-pink-500/20 to-cyan-500/20 rounded-full mix-blend-multiply filter blur-xl animate-blob-spectacular animation-delay-4000"></div>
-        <div className="absolute bottom-20 right-32 w-64 h-64 bg-gradient-to-r from-cyan-500/15 to-blue-500/15 rounded-full mix-blend-multiply filter blur-xl animate-blob-spectacular animation-delay-6000"></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-linear-to-r from-blue-500/20 to-purple-500/20 rounded-full mix-blend-multiply filter blur-xl animate-blob-spectacular"></div>
+        <div className="absolute top-20 right-0 w-80 h-80 bg-linear-to-r from-purple-500/25 to-pink-500/25 rounded-full mix-blend-multiply filter blur-xl animate-blob-spectacular animation-delay-2000"></div>
+        <div className="absolute bottom-0 left-20 w-72 h-72 bg-linear-to-r from-pink-500/20 to-cyan-500/20 rounded-full mix-blend-multiply filter blur-xl animate-blob-spectacular animation-delay-4000"></div>
+        <div className="absolute bottom-20 right-32 w-64 h-64 bg-linear-to-r from-cyan-500/15 to-blue-500/15 rounded-full mix-blend-multiply filter blur-xl animate-blob-spectacular animation-delay-6000"></div>
 
         {/* Grille animée - FIXE */}
         <div className="absolute inset-0 bg-grid-pattern opacity-10 animate-grid-pulse"></div>
 
         {/* Lignes d'énergie - FIXES */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-400/60 to-transparent animate-energy-flow"></div>
-          <div className="absolute top-3/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-purple-400/60 to-transparent animate-energy-flow-reverse"></div>
-          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-pink-400/40 to-transparent animate-energy-flow animation-delay-3000"></div>
-          
-          <div className="absolute left-1/4 top-0 w-0.5 h-full bg-gradient-to-b from-transparent via-cyan-400/60 to-transparent animate-energy-flow-vertical"></div>
-          <div className="absolute right-1/4 top-0 w-0.5 h-full bg-gradient-to-b from-transparent via-yellow-400/60 to-transparent animate-energy-flow-vertical-reverse"></div>
+          <div className="absolute top-1/4 left-0 w-full h-0.5 bg-linear-to-r from-transparent via-blue-400/60 to-transparent animate-energy-flow"></div>
+          <div className="absolute top-3/4 left-0 w-full h-0.5 bg-linear-to-r from-transparent via-purple-400/60 to-transparent animate-energy-flow-reverse"></div>
+          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-linear-to-r from-transparent via-pink-400/40 to-transparent animate-energy-flow animation-delay-3000"></div>
+
+          <div className="absolute left-1/4 top-0 w-0.5 h-full bg-linear-to-b from-transparent via-cyan-400/60 to-transparent animate-energy-flow-vertical"></div>
+          <div className="absolute right-1/4 top-0 w-0.5 h-full bg-linear-to-b from-transparent via-yellow-400/60 to-transparent animate-energy-flow-vertical-reverse"></div>
         </div>
 
         {/* Cercles d'énergie - FIXES */}
@@ -225,18 +225,18 @@ const Hero: React.FC = () => {
         {/* Système orbital complexe - POSITION FIXE AU CENTRE - INDÉPENDANT DE LA SOURIS */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
           <div className="relative w-96 h-96">
-            <div className="absolute top-0 left-1/2 w-3 h-3 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full animate-orbit-fast shadow-glow-blue"></div>
-            <div className="absolute top-0 left-1/2 w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-orbit-medium animation-delay-1000 shadow-glow-purple"></div>
-            <div className="absolute top-0 left-1/2 w-4 h-4 bg-gradient-to-r from-pink-400 to-red-400 rounded-full animate-orbit-slow animation-delay-2000 shadow-glow-pink"></div>
-            <div className="absolute top-0 left-1/2 w-2.5 h-2.5 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-orbit-reverse animation-delay-3000 shadow-glow-yellow"></div>
+            <div className="absolute top-0 left-1/2 w-3 h-3 bg-linear-to-r from-blue-400 to-cyan-400 rounded-full animate-orbit-fast shadow-glow-blue"></div>
+            <div className="absolute top-0 left-1/2 w-2 h-2 bg-linear-to-r from-purple-400 to-pink-400 rounded-full animate-orbit-medium animation-delay-1000 shadow-glow-purple"></div>
+            <div className="absolute top-0 left-1/2 w-4 h-4 bg-linear-to-r from-pink-400 to-red-400 rounded-full animate-orbit-slow animation-delay-2000 shadow-glow-pink"></div>
+            <div className="absolute top-0 left-1/2 w-2.5 h-2.5 bg-linear-to-r from-yellow-400 to-orange-400 rounded-full animate-orbit-reverse animation-delay-3000 shadow-glow-yellow"></div>
           </div>
         </div>
 
         {/* Rayons de lumière - FIXES */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 w-1 h-96 bg-gradient-to-t from-transparent via-blue-400/30 to-transparent transform -translate-x-1/2 -translate-y-1/2 rotate-45 animate-light-ray"></div>
-          <div className="absolute top-1/2 left-1/2 w-1 h-96 bg-gradient-to-t from-transparent via-purple-400/30 to-transparent transform -translate-x-1/2 -translate-y-1/2 -rotate-45 animate-light-ray animation-delay-2000"></div>
-          <div className="absolute top-1/2 left-1/2 w-1 h-96 bg-gradient-to-t from-transparent via-pink-400/20 to-transparent transform -translate-x-1/2 -translate-y-1/2 rotate-90 animate-light-ray animation-delay-4000"></div>
+          <div className="absolute top-1/2 left-1/2 w-1 h-96 bg-linear-to-t from-transparent via-blue-400/30 to-transparent transform -translate-x-1/2 -translate-y-1/2 rotate-45 animate-light-ray"></div>
+          <div className="absolute top-1/2 left-1/2 w-1 h-96 bg-linear-to-t from-transparent via-purple-400/30 to-transparent transform -translate-x-1/2 -translate-y-1/2 -rotate-45 animate-light-ray animation-delay-2000"></div>
+          <div className="absolute top-1/2 left-1/2 w-1 h-96 bg-linear-to-t from-transparent via-pink-400/20 to-transparent transform -translate-x-1/2 -translate-y-1/2 rotate-90 animate-light-ray animation-delay-4000"></div>
         </div>
       </div>
 
@@ -270,25 +270,25 @@ const Hero: React.FC = () => {
           {/* Bouton de téléchargement de CV */}
             <button
               onClick={handleDownloadCV}
-              className="px-10 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg shadow-xl hover:scale-110 hover:shadow-blue-500/40 hover:shadow-2xl transition-all duration-300 animate-cta-glow cursor-pointer relative overflow-hidden group"
+              className="px-10 py-4 rounded-full bg-linear-to-r from-blue-600 to-purple-600 text-white font-bold text-lg shadow-xl hover:scale-110 hover:shadow-blue-500/40 hover:shadow-2xl transition-all duration-300 animate-cta-glow cursor-pointer relative overflow-hidden group"
             >
               {/* <Download size={20} /> */}
               <span className="relative z-10">{t('hero.cv')}</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-blue-400/30 via-purple-400/30 to-pink-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full blur-sm animate-cta-glow-bg" />
+              <span className="absolute inset-0 bg-linear-to-r from-blue-400/30 via-purple-400/30 to-pink-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full blur-sm animate-cta-glow-bg" />
             </button>
           <button
             onClick={() => scrollToSection('projects')}
-            className="px-10 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg shadow-xl hover:scale-110 hover:shadow-blue-500/40 hover:shadow-2xl transition-all duration-300 animate-cta-glow cursor-pointer relative overflow-hidden group"
+            className="px-10 py-4 rounded-full bg-linear-to-r from-blue-600 to-purple-600 text-white font-bold text-lg shadow-xl hover:scale-110 hover:shadow-blue-500/40 hover:shadow-2xl transition-all duration-300 animate-cta-glow cursor-pointer relative overflow-hidden group"
           >
             <span className="relative z-10">{t('hero.cta')}</span>
-            <span className="absolute inset-0 bg-gradient-to-r from-blue-400/30 via-purple-400/30 to-pink-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full blur-sm animate-cta-glow-bg" />
+            <span className="absolute inset-0 bg-linear-to-r from-blue-400/30 via-purple-400/30 to-pink-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full blur-sm animate-cta-glow-bg" />
           </button>
           <button
             onClick={() => scrollToSection('contact')}
-            className="px-10 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg shadow-xl hover:scale-110 hover:shadow-blue-500/40 hover:shadow-2xl transition-all duration-300 animate-cta-glow cursor-pointer relative overflow-hidden group"
+            className="px-10 py-4 rounded-full bg-linear-to-r from-blue-600 to-purple-600 text-white font-bold text-lg shadow-xl hover:scale-110 hover:shadow-blue-500/40 hover:shadow-2xl transition-all duration-300 animate-cta-glow cursor-pointer relative overflow-hidden group"
           >
             <span className="relative z-10">{t('hero.contact')}</span>
-            <span className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-purple-400/20 to-pink-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full blur-sm animate-cta-glow-bg" />
+            <span className="absolute inset-0 bg-linear-to-r from-blue-400/20 via-purple-400/20 to-pink-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full blur-sm animate-cta-glow-bg" />
           </button>
         </div>
 
@@ -307,7 +307,7 @@ const Hero: React.FC = () => {
               className={`relative p-4 rounded-full bg-gray-800 border border-gray-700 text-gray-400 ${color} ${glow} transition-all duration-300 hover:scale-125 hover:shadow-2xl group overflow-hidden animate-social-float-mega`}
               style={{ animationDelay: `${index * 0.3}s` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full animate-pulse-glow-mega"></div>
+              <div className="absolute inset-0 bg-linear-to-r from-blue-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full animate-pulse-glow-mega"></div>
               <Icon className="relative z-10 w-6 h-6 group-hover:animate-bounce-ultra" />
             </a>
           ))}

@@ -165,7 +165,7 @@ export default function Contact() {
                 <button 
                   type="submit" 
                   disabled={loading}
-                  className="w-full flex items-center justify-center space-x-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full flex items-center justify-center space-x-2 px-8 py-4 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
                   <span>{loading ? t('contact.sending') : t('contact.send')}</span>

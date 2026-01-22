@@ -24,14 +24,6 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Redouanemania",
-      des: "Jeux de revision pour enfants.",
-      img: "/RedouaneMania.png",
-      iconLists: ["/re.svg","/ts.svg", "/git.svg"],
-      link: "https://redouane18.vercel.app",
-    },
-    {
-      id: 3,
       title: "Arbre Généalogique",
       des: "construit votre arbre généalogique.",
       img: "/arbre.png",
@@ -39,7 +31,23 @@ const Projects = () => {
       link: "https://famillytree.vercel.app/",
     },
     {
+      id: 3,
+      title: "Redouanemania",
+      des: "Jeux de revision pour enfants.",
+      img: "/RedouaneMania.png",
+      iconLists: ["/re.svg","/ts.svg", "/git.svg"],
+      link: "https://redouane18.vercel.app",
+    },
+    {
       id: 4,
+      title: "African Cup 2025",
+      des: "Coupe d'Afrique 2025.",
+      img: "/Can_Morocco.png",
+      iconLists: ["/re.svg","/next.js.svg", "/tail.svg"],
+      link: "https://canmorocco.vercel.app/",
+    },
+    {
+      id: 5,
       title: "Portfolio",
       des: "Mon portfolio personel.",
       img: "/Portfolio.png",
@@ -92,7 +100,7 @@ const Projects = () => {
     <div className="max-w-6xl mx-auto">
       {/* Section Header */}
         <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               {t('projects.title')}
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -109,7 +117,7 @@ const Projects = () => {
             transitionSpeed={250}
             tiltMaxAngleX={15}
             tiltMaxAngleY={15}
-            className="group bg-card text-card-foreground border border-border rounded-2xl shadow-lg hover:shadow-4xl transition-all duration-500 overflow-hidden hover:-translate-y-6 hover:scale-105 sm:h-[32rem] h-[26rem] lg:min-h-[24rem] flex flex-col items-center justify-center max-w-md w-full mx-auto projects-animation ring-0 hover:ring-4 hover:ring-primary/40"
+            className="group bg-card text-card-foreground border border-border rounded-2xl shadow-lg hover:shadow-4xl transition-all duration-500 overflow-hidden hover:-translate-y-6 hover:scale-105 sm:h-128 h-104 lg:min-h-96 flex flex-col items-center justify-center max-w-md w-full mx-auto projects-animation ring-0 hover:ring-4 hover:ring-primary/40"
           >
             <Image
               src={img}
@@ -118,7 +126,7 @@ const Projects = () => {
               height={400}
               className="rounded-xl w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700 rotate-6 scale-85"
             />
-            <h1 className="font-bold text-2xl md:text-3xl line-clamp-1 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h1 className="font-bold text-2xl md:text-3xl line-clamp-1 text-center bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               {title}
             </h1>
             <p className="text-foreground text-center mb-3 px-4">{des}</p>
@@ -136,7 +144,7 @@ const Projects = () => {
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-auto mb-4 flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold uppercase tracking-wide shadow-xl hover:scale-110 hover:shadow-blue-500/40 hover:shadow-2xl transition-all duration-300 animate-cta-glow relative overflow-hidden group focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="mt-auto mb-4 flex items-center gap-2 px-8 py-3 rounded-full bg-linear-to-r from-blue-600 to-purple-600 text-white font-bold uppercase tracking-wide shadow-xl hover:scale-110 hover:shadow-blue-500/40 hover:shadow-2xl transition-all duration-300 animate-cta-glow relative overflow-hidden group focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
               <span className="relative z-10 flex items-center gap-2">
                 Voir le projet
@@ -144,7 +152,7 @@ const Projects = () => {
                   <FaLocationArrow />
                 </span>
               </span>
-              <span className="absolute inset-0 bg-gradient-to-r from-blue-400/30 via-purple-400/30 to-pink-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full blur-sm animate-cta-glow-bg" />
+              <span className="absolute inset-0 bg-linear-to-r from-blue-400/30 via-purple-400/30 to-pink-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full blur-sm animate-cta-glow-bg" />
             </a>
           </Tilt>
         ))}

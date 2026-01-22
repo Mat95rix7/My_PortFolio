@@ -81,7 +81,7 @@ const Skills: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               {t('skills.title')}
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -97,7 +97,7 @@ const Skills: React.FC = () => {
                 className="bg-gray-900 border border-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
               >
                 <div className="flex items-center mb-6">
-                  <div className={`p-3 rounded-full bg-gradient-to-r ${category.color} mr-4`}>
+                  <div className={`p-3 rounded-full bg-linear-to-r ${category.color} mr-4`}>
                     <category.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-white">{category.title}</h3>
@@ -112,7 +112,7 @@ const Skills: React.FC = () => {
                       </div>
                       <div className="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
                         <div 
-                          className={`h-full bg-gradient-to-r ${category.color} rounded-full transition-all duration-3000 ease-out group-hover:animate-pulse`}
+                          className={`h-full bg-linear-to-r ${category.color} rounded-full transition-all duration-3000 ease-out group-hover:animate-pulse`}
                           style={{ width: fillBars ? `${skill.level}%` : '0%' }}
                         ></div>
                       </div>

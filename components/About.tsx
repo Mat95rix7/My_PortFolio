@@ -32,7 +32,7 @@ const About: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               {t('about.title')}
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -54,7 +54,7 @@ const About: React.FC = () => {
                 {stats.map(({ icon: Icon, number, label }, index) => (
                   <div key={index} className="text-center group">
                     <div className="flex justify-center mb-3">
-                      <div className="p-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-gray-700 rounded-full group-hover:from-blue-600/30 group-hover:to-purple-600/30 transition-all duration-300">
+                      <div className="p-3 bg-linear-to-r from-blue-600/20 to-purple-600/20 border border-gray-700 rounded-full group-hover:from-blue-600/30 group-hover:to-purple-600/30 transition-all duration-300">
                         <Icon className="w-6 h-6 text-blue-400" />
                       </div>
                     </div>
@@ -75,7 +75,7 @@ const About: React.FC = () => {
                   width={800}
                   height={384}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-gray-900/60 to-transparent"></div>
               </div>
               
               {/* Floating Cards */}

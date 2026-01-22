@@ -3,7 +3,6 @@ import React from 'react';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import Image from 'next/image';
-import { label } from 'framer-motion/m';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -15,7 +14,7 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Brand */}
             <div className="md:col-span-2 flex flex-col items-center text-center">
-              <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+              <div className="text-3xl font-bold bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
                 Djamel NAADJI
               </div>
               <p className="text-gray-400 mb-6">
