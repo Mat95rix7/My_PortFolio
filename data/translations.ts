@@ -1,3 +1,4 @@
+import { contactInfo } from './contact';
 export const translations = {
   fr: {
     nav: {
@@ -9,8 +10,8 @@ export const translations = {
     },
     hero: {
       greeting: 'Bonjour, je suis',
-      firstname: 'Djamel',
-      lastname: 'NAADJI',
+      firstname: contactInfo.firstname,
+      lastname: contactInfo.lastname,
       title: 'Concepteur Développeur d\'Applications - Full Stack',
       subtitle: 'Passionné par le code et prêt à créer des expériences web exceptionnelles',
       cv: 'Télécharger mon CV',
@@ -63,9 +64,9 @@ export const translations = {
       info: {
         title: 'Informations de contact',
         description: 'N\'hésitez pas à me contacter pour discuter de vos projets ou pour toute collaboration.',
-        location: 'Jouy Le Moutier, France',
-        phone: '+33 6 14 51 56 85',
-        email: 'n.djamel95@gmail.com'
+        location: contactInfo.location,
+        phone: contactInfo.phone,
+        email: contactInfo.email
       },
       validation: {
         nameMin: 'Le nom doit contenir au moins 2 caractères',
@@ -93,8 +94,8 @@ export const translations = {
     },
     hero: {
       greeting: 'Hello, I am',
-      firstname: 'Djamel',
-      lastname: 'NAADJI',
+      firstname: contactInfo.firstname,
+      lastname: contactInfo.lastname,
       title: 'Application Developer Designer',
       subtitle: 'Passionate about code and ready to create exceptional web experiences',
       cv: 'Download my CV',
@@ -147,9 +148,9 @@ export const translations = {
       info: {
         title: 'Contact information',
         description: 'Feel free to contact me to discuss your projects or for any collaboration.',
-        location: 'Jouy Le Moutier, France',
-        phone: '+33 6 14 51 56 85',
-        email: 'n.djamel95@gmail.com'
+        location: contactInfo.location,
+        phone: contactInfo.phone,
+        email: contactInfo.email
       },
       validation: {
         nameMin: 'Name must contain at least 2 characters',

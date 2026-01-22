@@ -3,6 +3,7 @@ import React, { useMemo, useRef, useEffect } from 'react';
 import { Github, Linkedin, Mail, Code, Zap, Star, Sparkles, Rocket, Heart } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import gsap from "gsap";
+import { contactInfo } from '@/data/contact';
 
 function seededRandom(seed: number) {
   const x = Math.sin(seed) * 10000;
@@ -295,9 +296,9 @@ const Hero: React.FC = () => {
         {/* Liens sociaux (bulles magiques) */}
         <div className="flex items-center justify-center space-x-8 opacity-0 animate-fade-in-up animation-delay-1000">
           {[
-            { icon: Github, href: 'https://github.com', color: 'hover:text-gray-300 hover:shadow-gray-500/50', glow: 'hover:shadow-glow-gray' },
-            { icon: Linkedin, href: 'https://linkedin.com', color: 'hover:text-blue-400 hover:shadow-blue-500/50', glow: 'hover:shadow-glow-blue' },
-            { icon: Mail, href: 'mailto:contact@email.com', color: 'hover:text-red-400 hover:shadow-red-500/50', glow: 'hover:shadow-glow-red' }
+            { icon: Github, href: contactInfo.github, color: 'hover:text-gray-300 hover:shadow-gray-500/50', glow: 'hover:shadow-glow-gray' },
+            { icon: Linkedin, href: contactInfo.linkedin, color: 'hover:text-blue-400 hover:shadow-blue-500/50', glow: 'hover:shadow-glow-blue' },
+            { icon: Mail, href: contactInfo.email, color: 'hover:text-red-400 hover:shadow-red-500/50', glow: 'hover:shadow-glow-red' }
           ].map(({ icon: Icon, href, color, glow }, index) => (
             <a
               key={index}
