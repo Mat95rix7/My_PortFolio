@@ -8,57 +8,58 @@ import { useLanguage } from "../context/LanguageContext";
 import Image from 'next/image';
 import Tilt from 'react-parallax-tilt';
 import { projects } from "../data/projectsData";
+import { useLayoutEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
   const { t } = useLanguage();
 
-  useEffect(() => {
+
+
+useLayoutEffect(() => {
+  const ctx = gsap.context(() => {
     gsap.fromTo(
       ".projects-title-animation",
-      { translateY: "50%", opacity: 0 },
+      { y: 50, opacity: 0 },
       {
-        translateY: "0%",
+        y: 0,
         opacity: 1,
         ease: "power1.out",
         scrollTrigger: {
           trigger: "#projects",
           start: "top 60%",
-          end: "bottom 70%",
-          scrub: false,
         },
       }
     );
+
     gsap.fromTo(
       ".projects-animation",
-      { scale:0.5, opacity: 0 },
+      { scale: 0.5, opacity: 0 },
       {
-        scale:1,
+        scale: 1,
         opacity: 1,
-        delay:0,
+        stagger: 0.2,
         ease: "power1.out",
-        stagger: {
-          each: 0.2,
-          from: "start",
-        },
         scrollTrigger: {
           trigger: "#projects",
           start: "top 80%",
-          end: "bottom 90%",
           scrub: true,
         },
       }
     );
-  }, []);
+  });
+
+  return () => ctx.revert();
+}, []);
 
   return (
-<section id="project" className="min-h-screen flex items-center py-20 bg-gray-900">
+<section id="projects" className="min-h-screen flex items-center py-32 bg-gray-900">
   <div className="container mx-auto px-4">
     <div className="max-w-6xl mx-auto">
       {/* Section Header */}
         <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="projects-title-animation text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               {t('projects.title')}
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -94,7 +95,8 @@ const Projects = () => {
                   key={idx}
                   className="inline-flex items-center justify-center bg-secondary/80 border border-border rounded-full p-1.5 shadow-sm"
                 >
-                  <Image src={icon} alt="icon" width={20} height={20} className="object-contain" />
+                  {/* <Image src={icon} alt="icon" width={20} height={20} className="w-5 h-auto object-contain" /> */}
+                  <img src={icon} alt="icon" className="w-5 h-auto object-contain" />
                 </span>
               ))}
             </div>
@@ -122,4 +124,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

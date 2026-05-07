@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -16,9 +16,19 @@ function seededRandom(seed: number) {
   return x - Math.floor(x);
 }
 
+type Particle = {
+  left: number;
+  top: number;
+  width: number;
+  height: number;
+  animationDelay: number;
+  opacity: number;
+};
+
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [particles, setParticles] = useState<Particle[]>([]);
   const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
@@ -27,6 +37,19 @@ const Header: React.FC = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setParticles(
+      Array.from({ length: 18 }).map((_, i) => ({
+        left: seededRandom(i + 1) * 100,
+        top: seededRandom(i + 100) * 100,
+        width: 6 + seededRandom(i + 200) * 10,
+        height: 6 + seededRandom(i + 300) * 10,
+        animationDelay: seededRandom(i + 400) * 3,
+        opacity: 0.5 + seededRandom(i + 500) * 0.5,
+      }))
+    );
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -41,22 +64,9 @@ const Header: React.FC = () => {
     setLanguage(language === 'fr' ? 'en' : 'fr');
   };
 
-  // Génération déterministe des particules lumineuses
-  const particles = useMemo(() => {
-    return Array.from({ length: 18 }).map((_, i) => {
-      // Utilise un seed basé sur l'index pour que ce soit stable SSR/Client
-      const left = seededRandom(i + 1) * 100;
-      const top = seededRandom(i + 100) * 100;
-      const width = 6 + seededRandom(i + 200) * 10;
-      const height = 6 + seededRandom(i + 300) * 10;
-      const animationDelay = seededRandom(i + 400) * 3;
-      const opacity = 0.5 + seededRandom(i + 500) * 0.5;
-      return { left, top, width, height, animationDelay, opacity };
-    });
-  }, []);
-
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gray-900`}
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gray-900`}
       style={{ boxShadow: isScrolled ? '0 8px 32px 0 rgba(58, 97, 246, 0.25)' : undefined }}
     >
       {/* Fond gradient animé + scanline + particules */}
@@ -65,12 +75,12 @@ const Header: React.FC = () => {
         <div className="w-full h-full animate-gradient-move bg-[linear-gradient(120deg,#18181b_0%,#232336_40%,#312e81_70%,#701a75_100%)] opacity-50 blur-sm" />
         {/* Scanline/reflet */}
         <div className="absolute inset-0 w-full h-full pointer-events-none bg-scanline opacity-10 mix-blend-screen" />
-        {/* Particules lumineuses */}
+        {/* Particules lumineuses — rendues uniquement côté client */}
         <div className="absolute inset-0">
           {particles.map((p, i) => (
             <div
               key={i}
-              className={`absolute rounded-full bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 animate-particle-glow`}
+              className="absolute rounded-full bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 animate-particle-glow"
               style={{
                 left: `${p.left}%`,
                 top: `${p.top}%`,
@@ -78,15 +88,16 @@ const Header: React.FC = () => {
                 height: `${p.height}px`,
                 animationDelay: `${p.animationDelay}s`,
                 opacity: p.opacity,
-                filter: 'blur(1.5px) drop-shadow(0 0 8px #a78bfa)'
+                filter: 'blur(1.5px) drop-shadow(0 0 8px #a78bfa)',
               }}
             />
           ))}
         </div>
       </div>
+
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo spectaculaire avec glow dynamique et spring pop */}
+          {/* Logo */}
           <div className="relative group select-none animate-logo-spring">
             <div className="absolute inset-0 bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 rounded-xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-logo-glow" />
           </div>
@@ -104,11 +115,8 @@ const Header: React.FC = () => {
                   <span className="relative z-10 flex items-center gap-1 animate-text-glow-subtle">
                     {t(`nav.${item.key}`)}
                   </span>
-                  {/* Underline animé */}
                   <span className="absolute left-0 bottom-0 w-full h-1 bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-full shadow-lg shadow-blue-400/30 animate-underline-pop" />
-                  {/* Halo lumineux dynamique */}
                   <span className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-80 transition-opacity duration-700 bg-linear-to-r from-blue-400/60 via-purple-400/60 to-pink-400/60 blur-2xl -z-10 animate-halo-fade" />
-                  {/* Effet de lumière sur hover */}
                   <span className="absolute left-1/2 top-0 w-24 h-1 bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-90 blur-lg transition-all duration-700 -translate-x-1/2 animate-light-sweep" />
                 </button>
               ))}
@@ -123,7 +131,9 @@ const Header: React.FC = () => {
             >
               <div className="absolute inset-0 bg-linear-to-r from-blue-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <Globe className="relative z-10 w-5 h-5 group-hover:animate-spin-gentle" />
-              <span className="relative z-10 text-sm font-bold animate-text-glow-subtle tracking-widest">{language.toUpperCase()}</span>
+              <span className="relative z-10 text-sm font-bold animate-text-glow-subtle tracking-widest">
+                {language.toUpperCase()}
+              </span>
             </button>
 
             {/* Mobile Menu Button */}
@@ -132,10 +142,11 @@ const Header: React.FC = () => {
               className="md:hidden relative p-3 rounded-xl bg-gray-800/80 hover:bg-linear-to-r hover:from-blue-700 hover:to-purple-700 transition-all duration-300 text-gray-200 group overflow-hidden shadow-lg shadow-blue-400/10"
             >
               <div className="absolute inset-0 bg-linear-to-r from-blue-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              {isMenuOpen ? 
-                <X className="relative z-10 w-6 h-6 group-hover:animate-spin-fast" /> : 
+              {isMenuOpen ? (
+                <X className="relative z-10 w-6 h-6 group-hover:animate-spin-fast" />
+              ) : (
                 <Menu className="relative z-10 w-6 h-6 group-hover:animate-bounce-gentle" />
-              }
+              )}
             </button>
           </div>
         </div>
@@ -167,4 +178,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header; 
+export default Header;

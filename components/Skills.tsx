@@ -76,7 +76,7 @@ const Skills: React.FC = () => {
   }, []);
 
   return (
-    <section id="skills" ref={sectionRef} className="min-h-screen flex items-center py-20 bg-gray-900">
+    <section id="skills" ref={sectionRef} className="min-h-screen flex items-center py-32 bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}

@@ -67,15 +67,18 @@ const About: React.FC = () => {
 
             {/* Right Column - Image */}
             <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
+              <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
                 <Image
                   src="https://images.pexels.com/photos/3184396/pexels-photo-3184396.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Developer workspace"
-                  className="w-full h-96 object-cover"
-                  width={800}
-                  height={384}
+                  priority
+                  fill
+                      sizes="(max-width: 640px) 100vw,
+                      (max-width: 1024px) 90vw,
+                      800px"
+                  className="object-cover"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-gray-900/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-gray-900/60 to-transparent"/>
               </div>
               
               {/* Floating Cards */}
