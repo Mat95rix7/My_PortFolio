@@ -39,11 +39,12 @@ useLayoutEffect(() => {
         scale: 1,
         opacity: 1,
         stagger: 0.2,
+        duration: 0.6,
         ease: "power1.out",
         scrollTrigger: {
           trigger: "#projects",
           start: "top 80%",
-          scrub: true,
+          // scrub: true,
         },
       }
     );
@@ -75,7 +76,7 @@ useLayoutEffect(() => {
             transitionSpeed={250}
             tiltMaxAngleX={15}
             tiltMaxAngleY={15}
-            className="group bg-card text-card-foreground border border-border rounded-2xl shadow-lg hover:shadow-4xl transition-all duration-500 overflow-hidden hover:-translate-y-6 hover:scale-105 sm:h-128 h-104 lg:min-h-96 flex flex-col items-center justify-center max-w-md w-full mx-auto projects-animation ring-0 hover:ring-4 hover:ring-primary/40"
+            className="group bg-card text-card-foreground border border-border rounded-2xl shadow-lg hover:shadow-4xl transition-all duration-500 overflow-hidden hover:-translate-y-6 hover:scale-105  flex flex-col items-center justify-center max-w-md w-full mx-auto projects-animation ring-0 hover:ring-4 hover:ring-primary/40"
           >
             <Image
               src={img}
