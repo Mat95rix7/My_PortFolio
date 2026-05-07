@@ -2,7 +2,6 @@
 
 import { FaLocationArrow } from "react-icons/fa";
 import gsap from "gsap";
-import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLanguage } from "../context/LanguageContext";
 import Image from 'next/image';
