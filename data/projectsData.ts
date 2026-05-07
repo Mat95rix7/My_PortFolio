@@ -9,6 +9,14 @@
     },
     {
       id: 2,
+      title: "English Sahla",
+      des: "Learning English easily with Khawla.",
+      img: "/EnglishSahla.png",
+      iconLists: ["/re.svg","/tail.svg", "/vercel.svg"],
+      link: "https://englishsahla.vercel.app/",
+    },
+    {
+      id: 3,
       title: "Arbre Généalogique",
       des: "construit votre arbre généalogique.",
       img: "/arbre.png",
@@ -16,7 +24,7 @@
       link: "https://famillytree.vercel.app/",
     },
     {
-      id: 3,
+      id: 4,
       title: "Redouanemania",
       des: "Jeux de revision pour enfants.",
       img: "/RedouaneMania.png",
@@ -24,7 +32,7 @@
       link: "https://redouane18.vercel.app",
     },
     {
-      id: 4,
+      id: 5,
       title: "African Cup 2025",
       des: "Coupe d'Afrique 2025.",
       img: "/Can_Morocco.png",
@@ -32,7 +40,7 @@
       link: "https://canmorocco.vercel.app/",
     },
     {
-      id: 5,
+      id: 6,
       title: "Portfolio",
       des: "Mon portfolio personel.",
       img: "/Portfolio.png",

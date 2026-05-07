@@ -65,7 +65,7 @@ const Projects = () => {
               {t('projects.subtitle')}
             </p>
         </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 max-w-7xl mx-auto px-4 mt-14 place-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto px-4 mt-14 place-items-center">
         {projects.map(({ id, title, des, img, iconLists, link }) => (
           <Tilt
             key={id}

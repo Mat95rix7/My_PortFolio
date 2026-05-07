@@ -1,6 +1,7 @@
 export const contactInfo = {
     firstname : 'Djamel',
     lastname : 'NAADJI',
+    nickname : 'Mat95rix7',
     location: 'Jouy Le Moutier, France',
     phone: '+33 6 14 51 56 85',
     email: 'n.djamel95@gmail.com',

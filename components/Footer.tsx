@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
           {/* Bottom Bar */}
           <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-2 text-gray-400">
-              <span>© 2026 Mat95rix7. {t('footer.rights')}</span>
+              <span>© 2026 {contactInfo.nickname}. {t('footer.rights')}</span>
             </div>
             <div className="flex items-center space-x-2 text-gray-400 mt-4 md:mt-0">
               <span>{t('footer.made')}</span>
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
                 height={16}
                 className="w-4 h-4 text-red-400"
               />
-              <span>{t('footer.by')} {contactInfo.firstname}</span>
+              <span>{t('footer.by')} {contactInfo.nickname}</span>
             </div>
           </div>
         </div>
