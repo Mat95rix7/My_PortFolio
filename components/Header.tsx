@@ -25,7 +25,7 @@ type Particle = {
   opacity: number;
 };
 
-const Header: React.FC = () => {
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [particles, setParticles] = useState<Particle[]>([]);
@@ -177,5 +177,3 @@ const Header: React.FC = () => {
     </header>
   );
 };
-
-export default Header;

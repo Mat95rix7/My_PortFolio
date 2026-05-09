@@ -3,7 +3,7 @@ import React, { useEffect, useState, useMemo, useRef } from 'react';
 import { Code, Server, Settings, Database } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-const Skills: React.FC = () => {
+export default function Skills() {
   const { t } = useLanguage();
 
   const skillCategories = useMemo(() => [
@@ -127,5 +127,3 @@ const Skills: React.FC = () => {
     </section>
   );
 };
-
-export default Skills; 

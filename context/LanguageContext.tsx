@@ -25,13 +25,13 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   const t = (key: string): string => {
     const keys = key.split('.');
-    let value: unknown = translations[language];
-    
+    let value: unknown = translations;
+
     for (const k of keys) {
       value = (value as Record<string, unknown>)?.[k];
     }
-    
-    return (value as string) || key;
+
+    return (value as Record<string, string>)?.[language] || key;
   };
 
   return (
@@ -39,4 +39,4 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
       {children}
     </LanguageContext.Provider>
   );
-}; 
+};

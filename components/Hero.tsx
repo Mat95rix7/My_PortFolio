@@ -70,7 +70,7 @@ const FlyingName = ({ first, last }: { first: string; last: string }) => {
   );
 };
 
-const Hero: React.FC = () => {
+export default function Hero() {
   const { t } = useLanguage();
   const firstName = t('hero.firstname');
   const lastName = t('hero.lastname');
@@ -317,5 +317,3 @@ const Hero: React.FC = () => {
     </section>
   );
 };
-
-export default Hero;

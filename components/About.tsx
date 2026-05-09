@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 import Image from 'next/image';
 import { preventOrphans } from '../utils/preventOrphans';
 
-const About: React.FC = () => {
+export default function About() {
   const { t } = useLanguage();
 
   const stats = [
@@ -98,5 +98,3 @@ const About: React.FC = () => {
     </section>
   );
 };
-
-export default About; 

@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 import Image from 'next/image';
 import { contactInfo } from '../data/contact';
 
-const Footer: React.FC = () => {
+export default function Footer() {
   const { t } = useLanguage();
 
   return (
@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
                 {contactInfo.firstname} {contactInfo.lastname}
               </div>
               <p className="text-gray-400 mb-6">
-                Full Stack Developer passionate about creating innovative digital experiences.
+                {t('footer.subtitle')}
               </p>
               <div className="flex space-x-4">
                 {[
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
 
             {/* Contact Info */}
             <div className="flex flex-col items-center text-center">
-              <h3 className="text-xl font-bold mb-4">Contact Info</h3>
+              <h3 className="text-xl font-bold mb-4">{t('footer.contact')}</h3>
               <div className="space-y-2 text-gray-400">
                 <div>{contactInfo.location}</div>
                 <div>{contactInfo.phone}</div>
@@ -71,5 +71,3 @@ const Footer: React.FC = () => {
     </footer>
   );
 };
-
-export default Footer; 
