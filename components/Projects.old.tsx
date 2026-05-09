@@ -11,8 +11,8 @@ import { useLayoutEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Projects = () => {
-  const { t } = useLanguage();
+export default function Projects() {
+  const { t, language } = useLanguage();
 
 
 
@@ -88,7 +88,7 @@ useLayoutEffect(() => {
             <h1 className="font-bold text-2xl md:text-3xl line-clamp-1 text-center bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               {title}
             </h1>
-            <p className="text-foreground text-center mb-3 px-4">{des}</p>
+            <p className="text-foreground text-center mb-3 px-4">{language === 'fr' ? des.fr : des.en}</p>
             <div className="flex flex-row gap-3 mb-4">
               {iconLists.map((icon, idx) => (
                 <span
@@ -122,5 +122,3 @@ useLayoutEffect(() => {
 </section>
   );
 };
-
-export default Projects;
