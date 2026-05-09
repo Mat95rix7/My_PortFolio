@@ -38,7 +38,7 @@ export const translations = {
   projects: {
     title:       { fr: 'Mes projets',          en: 'My projects' },
     subtitle:    { fr: 'Projets et réalisations', en: 'Learning projects and achievements' },
-    viewProject: { fr: 'Voir le projet',       en: 'View project' }
+    viewProject: { fr: 'Voir plus',       en: 'View more' }
   },
   contact: {
     title:    { fr: 'Contactez-moi',                   en: 'Contact me' },

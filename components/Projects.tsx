@@ -123,14 +123,14 @@ export default function Projects() {
                 ref={cardRef}
                 className="relative shrink-0 rounded-2xl overflow-hidden border border-gray-800 shadow-2xl shadow-black/70"
                 style={{
-                  width: "clamp(280px, 52vw, 720px)",
+                  width: "clamp(350px, 52vw, 720px)",
                   willChange: "transform, opacity",
                 }}
               >
                 {/* Image — 60% */}
                 <div
                   className="relative w-full"
-                  style={{ height: "clamp(200px, 32vh, 380px)" }}
+                  style={{ height: "clamp(300px, 32vh, 380px)" }}
                 >
                   <Image
                     src={project.img}
@@ -140,7 +140,6 @@ export default function Projects() {
                     priority
                     className="object-cover"
                   />
-                  {/* Gradient subtil en bas pour une transition douce */}
                   <div
                     className="absolute bottom-0 inset-x-0"
                     style={{
@@ -149,12 +148,12 @@ export default function Projects() {
                     }}
                   />
 
-                  {/* Badge numéro en haut à gauche */}
+                  {/* Badge numéro */}
                   <div className="absolute top-4 left-4">
                     <span
                       className="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full"
                       style={{
-                        background: "rgba(255,255,255,0.1)",
+                        background: "rgba(8, 8, 8, 0.1)",
                         border: "1px solid rgba(255,255,255,0.15)",
                         color: "rgba(255,255,255,0.7)",
                         backdropFilter: "blur(8px)",
@@ -165,36 +164,28 @@ export default function Projects() {
                   </div>
                 </div>
 
-                {/* Info — 25% */}
+                {/* Info */}
                 <div
-                  className="flex flex-col gap-3 px-6 py-5"
+                  className="flex flex-col sm:flex-row gap-3 px-6 py-5 justify-between"
                   style={{ background: "#0a0a14" }}
                 >
-                  {/* Titre + lien */}
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex flex-col justify-center items-center gap-2">
+                    {/* Titre */}
                     <h3 className="font-bold text-lg md:text-xl text-white leading-snug">
                       {project.title}
                     </h3>
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 shrink-0 px-4 py-1.5 rounded-full text-white text-xs font-bold uppercase tracking-wider transition-all duration-200 hover:scale-105 hover:brightness-110"
-                      style={{ background: "linear-gradient(135deg, #2563eb, #7c3aed)" }}
-                    >
-                      { t("projects.viewProject") }
-                      <FaLocationArrow size={9} />
-                    </a>
+
+                    {/* Description — pleine largeur */}
+                    <p className="text-gray-400 text-sm leading-relaxed line-clamp-2">
+                      {language === "fr" ? project.des.fr : project.des.en}
+                    </p>
                   </div>
 
-                  {/* Description + tech icons sur la même ligne */}
-                  <div className="flex items-center justify-between gap-4">
-                    <p className="text-gray-400 text-sm leading-relaxed line-clamp-2 flex-1">
-                      { language === "fr" ? project.des.fr : project.des.en }
-                    </p>
+                  {/* Bouton + icônes — row sur desktop, colonne sur mobile */}
+                  <div className="flex flex-row sm:flex-col sm:items-center justify-between gap-3 pt-1">
 
                     {/* Tech icons */}
-                    <div className="flex gap-1.5 shrink-0">
+                    <div className="flex gap-1.5 pt-1">
                       {project.iconLists.map((icon: string, idx: number) => (
                         <span
                           key={idx}
@@ -207,6 +198,20 @@ export default function Projects() {
                           <img src={icon} alt="tech" className="w-3.5 h-3.5 object-contain" />
                         </span>
                       ))}
+                    </div>
+
+                    {/* Titre + lien */}
+                    <div className="flex items-start justify-between gap-4">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-1.5 shrink-0 px-4 py-1.5 rounded-full text-white text-sm font-bold uppercase tracking-wider transition-all duration-200 hover:scale-105 hover:brightness-110"
+                        style={{ background: "linear-gradient(135deg, #2563eb, #7c3aed)" }}
+                      >
+                        {t("projects.viewProject")}
+                        <FaLocationArrow size={9} />
+                      </a>
                     </div>
                   </div>
                 </div>
